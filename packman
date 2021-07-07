@@ -1,0 +1,20 @@
+#!/bin/bash
+
+COMMAND=$1
+shift
+
+case $COMMAND in
+
+     install)    pacman -S $* ;;
+
+     orphans)    pacman -Qdt ;;
+
+     remove)     pacman -Rsu $* ;;
+
+     search)     pacman -Ss $* ;;
+
+     update)     pacman -S $* ;;
+
+     update-all) pacman -Syu ;;
+
+esac
